@@ -1,0 +1,30 @@
+public class Solution {
+    public boolean isPalindrome(String s) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        
+        if(s.length()==1|| s.length()==0) return true;
+        if(s.equals(" ")) return true;
+        
+        int i = 0; int j = s.length()-1;
+        
+        String s1 = s.toLowerCase();
+        
+        while(i < j){
+            if(!Character.isLetter(s1.charAt(i)) && !Character.isDigit(s1.charAt(i))){
+                i++;
+                continue;
+            }
+            
+             if(!Character.isLetter(s1.charAt(j)) && !Character.isDigit(s1.charAt(j))){
+                j--;
+                continue;
+            }
+            
+            
+            if(s1.charAt(i++) != s1.charAt(j--))
+            return false;
+        }
+        return true;
+}
+}
